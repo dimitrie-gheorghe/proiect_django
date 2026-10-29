@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>Operatii</title>
+</head>
+
+<body>
+    <h1>Operatii</h1>
+    {% load mathfilters %}
+    <ul>
+        {% for elem in d.lista %}
+            {% if elem.operatie == "suma" %}
+                <li>{{ elem.a }} + {{ elem.b }} = {{ elem.a|add:elem.b }}</li>
+            {% elif elem.operatie == "diferenta" %}
+                <li>{{ elem.a }} - {{ elem.b }} = {{ elem.a|sub:elem.b }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>
